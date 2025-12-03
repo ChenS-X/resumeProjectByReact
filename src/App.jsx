@@ -10,8 +10,14 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 function App() {
 
+  // 修改meta
+  useEffect(() => {
+    document.title = "ChenS-X | 个人简历";
+  }, []);
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // 获取设置主题
   useEffect(() => {
     const theme_in_localStorage = localStorage.getItem('theme');
     const theme_in_window = window.matchMedia('prefers-color-scheme: dark').matches;
