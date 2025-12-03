@@ -26,11 +26,16 @@ jobs:
       uses: actions/setup-node@v4
       with:
        node-version: 22
-       cache: 'npm'
+       cache: npm
+    - name: 安装pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        run_install: true
+
     - name: 安装依赖包
       run: |
-        npm install
-        npm run build
+        pnpm install
+        pnpm build
     - name: 部署
       uses: JamesIves/github-pages-deploy-action@v4
       with:
