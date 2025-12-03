@@ -31,6 +31,11 @@ import firebase from "./firebase.png";
 // import email from "./email.png";
 // import email_dark from "./email-dark.png";
 
+import WebEcharts from '/web-echarts.png'
+import WxApp from '/wx-app.png'
+import CenterService from '/center-service.png'
+import Appcan from '/appcan.png'
+
 export const assets = {
   logo,
   // arrow_up_dark,
@@ -123,21 +128,21 @@ export const workData = [
   {
     title: "Frontend project",
     description: "Web Design",
-    bgImage: "web-echarts.png",
+    bgImage: WebEcharts,
   },
   {
     title: "Frontend project",
     description: "Web Design",
-    bgImage: "wx-app.png",
+    bgImage: WxApp,
   },
   {
     title: "Frontend project",
     description: "Web Design",
-    bgImage: "center-service.png",
+    bgImage: CenterService,
   },
   {
     title: "Frontend project",
     description: "Web Design",
-    bgImage: "appcan.png",
+    bgImage: Appcan,
   },
 ];
