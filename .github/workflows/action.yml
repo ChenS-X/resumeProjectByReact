@@ -22,15 +22,19 @@ jobs:
   steps:
     - name: 拉取代码
       uses: actions/checkout@v4
-    - name: 设置NodeJs环境
-      uses: actions/setup-node@v4
-      with:
-       node-version: 22
-       cache: npm
+
     - name: 安装pnpm
       uses: pnpm/action-setup@v4
+    - name: Install pnpm
       with:
-        run_install: true
+        version: 10
+        run_install: false
+
+    - name: Install Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'pnpm'
 
     - name: 安装依赖包
       run: |
