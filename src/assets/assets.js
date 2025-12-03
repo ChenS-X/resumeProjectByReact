@@ -129,21 +129,21 @@ export const workData = [
     {
         title: 'Frontend project',
         description: 'Web Design',
-        bgImage: "/web-echarts.png",
+        bgImage: "web-echarts.png",
     },
     {
         title: 'Frontend project',
         description: 'Web Design',
-        bgImage: "/wx-app.png",
+        bgImage: "wx-app.png",
     },
     {
         title: 'Frontend project',
         description: 'Web Design',
-        bgImage: "/center-service.png",
+        bgImage: "center-service.png",
     },
     {
         title: 'Frontend project',
         description: 'Web Design',
-        bgImage: "/appcan.png",
+        bgImage: "appcan.png",
     }
 ]
