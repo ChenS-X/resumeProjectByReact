@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { assets, infoList, toolsData } from "../assets/assets";
 import ThemeContext from "@/contexts/themeContext";
 import { motion } from "motion/react";
+import LazyImage from "@/components/LazyImage";
 
 const About = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -42,7 +43,7 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="w-64 sm:w-80 rounded-3xl max-w-none"
         >
-          <img
+          <LazyImage
             src={assets.avatar}
             alt="user"
             className="w-full rounded-3xl"
@@ -72,7 +73,7 @@ const About = () => {
                 key={title}
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-dark-hover/50"
               >
-                <img
+                <LazyImage
                   src={isDarkMode ? iconDark : icon}
                   alt={title}
                   className="w-7 mt-3"
@@ -106,7 +107,7 @@ const About = () => {
                 key={index}
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
               >
-                <img src={tool} alt="Tool" className="w-5 sm:w-7" />
+                <LazyImage src={tool} alt="Tool" className="w-5 sm:w-7" />
               </motion.li>
             ))}
           </motion.ul>

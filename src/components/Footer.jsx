@@ -1,15 +1,16 @@
 import { useContext } from "react";
 import { assets } from "@/assets/assets";
 import ThemeContext from "@/contexts/themeContext";
+import LazyImage from "@/components/LazyImage";
 
 const Footer = () => {
   const { isDarkMode } = useContext(ThemeContext);
   return (
     <div className="mt-20">
       <div className="text-center">
-        <img src={assets.logo} alt="footer" className="w-36 mx-auto mb-2" />
+        <LazyImage src={assets.logo} alt="footer" className="w-36 mx-auto mb-2" />
         <div className="w-max flex items-center gap-2 mx-auto">
-          <img
+          <LazyImage
             src={isDarkMode ? assets.email_dark : assets.email}
             alt=""
             className="w-6"

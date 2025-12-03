@@ -15,6 +15,21 @@ function App() {
     document.title = "ChenS-X | 个人简历";
   }, []);
 
+  // 监听intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src= img.dataset.src;
+          observer.unobserve(img);
+        }
+      });
+    });
+    const hiddenElements = document.querySelectorAll('._lazy_img');
+    hiddenElements.forEach((el) => observer.observe(el))
+  }, []);
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // 获取设置主题

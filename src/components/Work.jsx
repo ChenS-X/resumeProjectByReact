@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { assets, workData } from "../assets/assets";
 import ThemeContext from "@/contexts/themeContext";
 import { motion } from "motion/react";
+import LazyImage from "@/components/LazyImage";
 
 const Work = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -59,7 +60,7 @@ const Work = () => {
                 <p className="text-sm text-gray-700">{description}</p>
               </div>
               <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                <img src={assets.send} alt="" className="w-5" />
+                <LazyImage src={assets.send} alt="" className="w-5" />
               </div>
             </div>
           </motion.div>
@@ -74,7 +75,7 @@ const Work = () => {
         className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-light-hover duration-500 dark:text-white dark:border-white dark:hover:bg-dark-hover "
       >
         Show more
-        <img
+        <LazyImage
           src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up_light}
           alt=""
           className="w-4 rotate-90"

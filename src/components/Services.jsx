@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { assets, serviceData } from "../assets/assets";
 import ThemeContext from "@/contexts/themeContext";
 import { motion } from "motion/react";
+import LazyImage from "@/components/LazyImage";
 
 const Services = () => {
   const { isDarkMode } = useContext(ThemeContext);
@@ -51,7 +52,7 @@ const Services = () => {
             key={title}
             className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 dark:hover:bg-dark-hover dark:hover:shadow-white"
           >
-            <img src={icon} alt={title} className="w-10" />
+            <LazyImage src={icon} alt={title} className="w-10" />
             <h3 className="text-lg my-4 text-gray-700 dark:text-white">
               {title}
             </h3>
@@ -60,7 +61,7 @@ const Services = () => {
             </p>
             <a href={link} className="flex items-center gap-2 text-sm mt-5">
               Read more
-              <img
+              <LazyImage
                 src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up_light}
                 alt=""
                 className="w-4 rotate-90"
