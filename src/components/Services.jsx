@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import { assets, serviceData } from "../assets/assets";
+import { serviceData } from "../assets/assets";
 import ThemeContext from "@/contexts/themeContext";
 import { motion } from "motion/react";
-import LazyImage from "@/components/LazyImage";
+import FontIcon from "@/components/FontIcon";
 
 const Services = () => {
-  const { isDarkMode } = useContext(ThemeContext);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -52,7 +51,7 @@ const Services = () => {
             key={title}
             className="border border-gray-400 rounded-lg px-8 py-12 hover:shadow-black cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 dark:hover:bg-dark-hover dark:hover:shadow-white"
           >
-            <LazyImage src={icon} alt={title} className="w-10" />
+            <FontIcon icon={icon} className="text-5xl text-pink-700" />
             <h3 className="text-lg my-4 text-gray-700 dark:text-white">
               {title}
             </h3>
@@ -61,10 +60,9 @@ const Services = () => {
             </p>
             <a href={link} className="flex items-center gap-2 text-sm mt-5">
               Read more
-              <LazyImage
-                src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up_light}
-                alt=""
-                className="w-4 rotate-90"
+              <FontIcon
+                icon="arrow-right"
+                className="text-md dark:text-white"
               />
             </a>
           </motion.div>

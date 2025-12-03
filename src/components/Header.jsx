@@ -1,6 +1,7 @@
 import { assets } from "../assets/assets";
 import { motion } from "motion/react";
 import LazyImage from "@/components/LazyImage";
+import FontIcon from "./FontIcon";
 
 const Header = () => {
   return (
@@ -26,7 +27,7 @@ const Header = () => {
         className="flex items gap-2 text-xl md:text-2xl mb-3 font-Ovo!"
       >
         Hi! I'm ChenS-X
-        <LazyImage src={assets.sayHi} alt="" className="w-7" />
+        <FontIcon icon="dazhaohu" className="text-red-400 text-2xl" />
       </motion.h3>
       <motion.h1
         initial={{ y: -30, opacity: 0 }}
@@ -54,7 +55,10 @@ const Header = () => {
           className="px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent"
         >
           contact me
-          <LazyImage src={assets.arrow_up_dark} alt="" className="w-4 rotate-45" />
+          <FontIcon
+            icon="arrow-right"
+            className="dark:text-white text-md -rotate-45"
+          />
         </motion.a>
         <motion.a
           initial={{ y: 30, opacity: 0 }}
@@ -65,7 +69,7 @@ const Header = () => {
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black"
         >
           my resume
-          <LazyImage src={assets.download} alt="" className="w-4" />
+          <FontIcon icon="download" className="dark:text-black text-md" />
         </motion.a>
       </div>
     </div>

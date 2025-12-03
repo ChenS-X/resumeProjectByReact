@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { assets } from "@/assets/assets";
+import { useState } from "react";
 import { motion } from "motion/react";
 import LazyImage from "@/components/LazyImage";
+import FontIcon from "./FontIcon";
 const Contact = () => {
   const [result, setResult] = useState("");
   const onSubmit = async (event) => {
@@ -104,7 +104,7 @@ const Contact = () => {
           className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-dark-hover"
         >
           Submit now
-          <LazyImage src={assets.arrow_up_dark} alt="" className="w-4 rotate-90" />
+          <FontIcon icon="arrow-right" className="text-md" />
         </motion.button>
         <p className="mt-4">{result}</p>
       </motion.form>

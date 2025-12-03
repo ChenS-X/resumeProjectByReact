@@ -1,0 +1,77 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1764767302770') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  /* font-size: 16px; */
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-right:before {
+  content: "\e60c";
+}
+
+.icon-project:before {
+  content: "\e645";
+}
+
+.icon-iOS:before {
+  content: "\e734";
+}
+
+.icon-code:before {
+  content: "\e7fc";
+}
+
+.icon-H:before {
+  content: "\e65a";
+}
+
+.icon-menu:before {
+  content: "\e615";
+}
+
+.icon-close:before {
+  content: "\e602";
+}
+
+.icon-download:before {
+  content: "\e66c";
+}
+
+.icon-sun:before {
+  content: "\e886";
+}
+
+.icon-moon:before {
+  content: "\e6c9";
+}
+
+.icon-dazhaohu:before {
+  content: "\ff17";
+}
+
+.icon-email-fill:before {
+  content: "\e856";
+}
+
+.icon-send-fill:before {
+  content: "\e888";
+}
+
+.icon-uniapp:before {
+  content: "\e6af";
+}
+
+.icon-hongmeng:before {
+  content: "\e60d";
+}
+
+.icon-education:before {
+  content: "\e9db";
+}
+

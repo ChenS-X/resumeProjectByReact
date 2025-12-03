@@ -1,11 +1,9 @@
-import { useContext } from "react";
 import { assets, infoList, toolsData } from "../assets/assets";
-import ThemeContext from "@/contexts/themeContext";
 import { motion } from "motion/react";
 import LazyImage from "@/components/LazyImage";
+import FontIcon from "@/components/FontIcon";
 
 const About = () => {
-  const { isDarkMode } = useContext(ThemeContext);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -67,17 +65,13 @@ const About = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl"
           >
-            {infoList.map(({ icon, iconDark, title, description }) => (
+            {infoList.map(({ icon, title, description }) => (
               <motion.li
                 whileHover={{ scale: 1.05 }}
                 key={title}
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-light-hover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-dark-hover/50"
               >
-                <LazyImage
-                  src={isDarkMode ? iconDark : icon}
-                  alt={title}
-                  className="w-7 mt-3"
-                />
+                <FontIcon icon={icon} className="dark:text-white text-4xl" />
                 <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
                   {title}
                 </h3>
