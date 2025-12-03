@@ -1,13 +1,20 @@
 import './App.css'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import ThemeContext from "@/contexts/themeContext";
 import Navbar from './components/Navbar'
 import Header from './components/Header'
-import About from './components/About';
-import Services from './components/Services';
-import Work from './components/Work';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+// import Services from './components/Services';
+// import Work from './components/Work';
+// import Contact from './components/Contact';
+// import Footer from './components/Footer';
+
+// 组件懒加载
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Work = lazy(() => import('./components/Work'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
 function App() {
 
   // 修改meta

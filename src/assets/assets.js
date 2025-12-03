@@ -1,14 +1,14 @@
-import logo from "./logo.png";
+import logo from "./logo.webp";
 // import arrow_up_dark from "./arrow-up-dark.png";
 // import arrow_up_light from "./arrow-up-light.png";
-import bg from "./bg.jpeg";
+// import bg from "./bg.jpeg";
 // import moon from "./moon.png";
 // import sun from "./sun.png";
 // import menu from "./menu.png";
 // import menu_dark from "./menu_dark.png";
 // import close from "./close.png";
 // import close_dark from "./close_dark.png";
-import avatar from "./avatar.jpg";
+import avatar from "./avatar.webp";
 // import sayHi from "./sayHi.png";
 // import download from "./download.png";
 // import download_dark from "./download_dark.png";
@@ -40,7 +40,7 @@ export const assets = {
   logo,
   // arrow_up_dark,
   // arrow_up_light,
-  bg,
+//   bg,
   // moon,
   // sun,
   // menu,

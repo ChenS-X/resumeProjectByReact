@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { motion } from "motion/react";
-import LazyImage from "@/components/LazyImage";
 import FontIcon from "./FontIcon";
 const Contact = () => {
   const [result, setResult] = useState("");
@@ -31,8 +30,9 @@ const Contact = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="contact"
-      className='w-full px-[12%] py-10 scroll-mt-20 bg-[url("/bg.jpeg")] bg-no-repeat bg-center bg-cover dark:bg-none'
+      className="w-full px-[12%] py-10 scroll-mt-20 relative"
     >
+      <div className="w-full h-full absolute -z-10 top-0 left-0 right-0 bottom-0 opacity-50 bg-gradient-custom-footer dark:bg-none!"></div>
       <motion.h4
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -26,9 +26,10 @@ const Navbar = () => {
   }, []);
   return (
     <>
-      <div className="dark:hidden -z-10 w-full h-[91.69px] overflow-hidden fixed top-0 right-0">
+      {/* <div className="dark:hidden -z-10 w-full h-[91.69px] overflow-hidden fixed top-0 right-0">
         <LazyImage src={assets.bg} alt="" className="w-full rotate-180" />
-      </div>
+      </div> */}
+      <div className="dark:hidden -z-10 w-full h-[91.69px] overflow-hidden fixed top-0 right-0 bg-gradient-custom opacity-50"></div>
       <nav
         className={`w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
           isScroll

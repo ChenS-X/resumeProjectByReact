@@ -1,7 +1,31 @@
 @import "tailwindcss";
-@import './assets/font/iconfont.css';
+@import "./assets/fonts/iconfont.css";
 @config '../tailwind.config.mjs';
 
 * {
   font-family: Outfit;
+}
+
+@layer utilities {
+  .bg-gradient-custom {
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(233, 233, 233, 1),
+      rgb(255, 237, 237),
+      rgb(255, 255, 210),
+      rgb(229, 255, 255)
+    );
+    filter: blur(2px);
+  }
+  .bg-gradient-custom-footer {
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(255, 237, 237,1),
+      rgb(255, 255, 210, 0.8),
+      rgb(229, 255, 255,0.8),
+      rgb(233, 233, 233, 0.8),
+      rgb(255, 186, 240, 0.2)
+    );
+    filter: blur(8px);
+  }
 }
