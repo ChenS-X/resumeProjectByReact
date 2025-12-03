@@ -1,0 +1,38 @@
+name: 个人简历项目打包部署
+
+on:
+  push:
+    branches: [main]
+  
+  workflow_dispatch:
+
+# 允许一个并发的部署
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
+
+jobs:
+ npm-build:
+  name: npm build 工作流
+  runs-on: ubuntu-latest
+  permissions:
+    contents: write
+  
+  steps:
+    - name: 拉取代码
+      uses: actions/checkout@v4
+    - name: 设置NodeJs环境
+      uses: actions/setup-node@v4
+      with:
+       node-version: 22
+       cache: 'npm'
+    - name: 安装依赖包
+      run: |
+        npm install
+        npm run build
+    - name: 部署
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
+        branches: gh-pages
