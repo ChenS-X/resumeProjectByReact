@@ -20,7 +20,7 @@ import avatar from "./avatar.webp";
 // import project from "./project.png";
 // import project_dark from "./project_dark.png";
 import vscode from "./vscode.png";
-import github from "./github-fill.png";
+import git from "./git.webp";
 import uniapp from "./uni-app-copy.png";
 import nodejs from "./nodejs.png";
 import firebase from "./firebase.png";
@@ -60,7 +60,8 @@ export const assets = {
   // project,
   // project_dark,
   vscode,
-  github,
+  git,
+  // github,
   uniapp,
   nodejs,
   firebase,
@@ -93,7 +94,7 @@ export const infoList = [
 
 export const toolsData = [
   assets.vscode,
-  assets.github,
+  assets.git,
   assets.uniapp,
   assets.nodejs,
   assets.firebase,
