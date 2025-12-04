@@ -12,7 +12,27 @@ export default defineConfig({
       input: {
         main: path.join(__dirname, "index.html"),
       },
-      external: ["motion"]
+      
+      external: ["motion"],
+      output: {
+        globals: {
+          motion: "motion",
+        },
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor";
+          }
+          if (id.includes("src")) {
+            return "app";
+          }
+          if(/\/react(?:-dom)?/.test(id)) {
+            return "react";
+          }
+        }
+        // advancedChunks: {
+        //   groups: [{ name: 'vendor', test: /\/react(?:-dom)?/ }, {name: 'lib', test: /node_modules/}]
+        // }
+      }
     },
   },
   resolve: {
