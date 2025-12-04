@@ -1,15 +1,17 @@
 import { assets } from "@/assets/assets";
 import LazyImage from "@/components/LazyImage";
 import FontIcon from "./FontIcon";
-
+import { useContext } from "react";
+import ThemeContext from "@/contexts/themeContext";
 const Footer = () => {
+  const { isDarkMode } = useContext(ThemeContext);
   return (
     <div className="mt-20">
       <div className="text-center">
         <LazyImage
-          src={assets.logo}
+          src={isDarkMode ? assets.logo_dark : assets.logo}
           alt="footer"
-          className="w-36 mx-auto mb-2"
+          className="w-36 mx-auto mb-2 translate-x-2.5"
         />
         <div className="w-max flex items-center gap-2 mx-auto">
           <FontIcon icon="email-fill" className="dark:text-white text-xl" />
