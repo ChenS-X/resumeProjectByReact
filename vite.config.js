@@ -3,21 +3,24 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import imageOptimizer from "./plugins/image-optimizer";
 import {visualizer} from 'rollup-plugin-visualizer'
+import { terser } from 'rollup-plugin-terser'
 console.log(process.env.NODE_ENV);
 // https://vite.dev/config/
 export default defineConfig({
   base: "./",
   build: {
+    minify: "terser",
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
     rollupOptions: {
       input: {
         main: path.join(__dirname, "index.html"),
       },
-      
-      // external: ["motion"],
       output: {
-        // globals: {
-        //   motion: "motion",
-        // },
         manualChunks(id) {
           if (id.includes("node_modules")) {
             return "vendor";
@@ -29,9 +32,6 @@ export default defineConfig({
             return "react";
           }
         }
-        // advancedChunks: {
-        //   groups: [{ name: 'vendor', test: /\/react(?:-dom)?/ }, {name: 'lib', test: /node_modules/}]
-        // }
       }
     },
   },
