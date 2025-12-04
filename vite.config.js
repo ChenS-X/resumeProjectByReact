@@ -13,11 +13,11 @@ export default defineConfig({
         main: path.join(__dirname, "index.html"),
       },
       
-      external: ["motion"],
+      // external: ["motion"],
       output: {
-        globals: {
-          motion: "motion",
-        },
+        // globals: {
+        //   motion: "motion",
+        // },
         manualChunks(id) {
           if (id.includes("node_modules")) {
             return "vendor";
