@@ -1,5 +1,5 @@
-import logo from "./logo.svg";
-import logo_dark from "./logo_dark.svg";
+import logo from "/logo.svg";
+import logo_dark from "/logo_dark.svg";
 // import arrow_up_dark from "./arrow-up-dark.png";
 // import arrow_up_light from "./arrow-up-light.png";
 // import bg from "./bg.jpeg";
