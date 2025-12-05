@@ -39,7 +39,7 @@ import web_pro from "/web_pro.svg";
 // import email_dark from "./email-dark.png";
 
 import WebEcharts from "/web-echarts.png";
-import WxApp from "/wx-app.png";
+import WxApp from "/wx-app.webp";
 import CenterService from "/center-service.png";
 import Appcan from "/appcan.png";
 
