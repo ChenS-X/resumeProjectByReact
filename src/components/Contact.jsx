@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import FontIcon from "./FontIcon";
+import { emailRequest } from "../utils/request";
 const Contact = () => {
   const [result, setResult] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -8,33 +9,26 @@ const Contact = () => {
     event.preventDefault();
     if (isSending) return;
     setResult("Sending....");
+    setIsSending(true);
     const formData = new FormData(event.target);
     const mailOptions = {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
     };
-    try {
-      setIsSending(true);
-      const response = await fetch("http://127.0.0.1:801/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(mailOptions),
-      });
+    const res = await emailRequest("/api/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(mailOptions),
+    });
 
-      const data = await response.json();
-      setIsSending(false);
-      console.log("Response:", data);
-      if (data.code === 200) {
-        setResult("Message sent successfully!");
-      } else {
-        setResult("Error: " + data.msg);
-      }
-    } catch (error) {
-      console.log("Error:", error);
-      setResult("Error: " + error.message);
+    setIsSending(false);
+    if (res.code === 200) {
+      setResult("Message sent successfully!");
+    } else {
+      setResult("Error: " + res.msg);
     }
   };
   return (
