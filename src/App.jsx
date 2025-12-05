@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect, useState, lazy, Suspense } from 'react'
+import { useEffect, useState, lazy } from 'react'
 import ThemeContext from "@/contexts/themeContext";
 import Navbar from './components/Navbar'
 import Header from './components/Header'
@@ -20,7 +20,7 @@ function App() {
 
   // 修改meta
   useEffect(() => {
-    document.title = "ChenS-X | 个人简历";
+    document.title = "ChenS-X | 个人简历 | React";
   }, []);
 
   // 监听intersection observer
@@ -44,7 +44,7 @@ function App() {
   useEffect(() => {
     const theme_in_localStorage = localStorage.getItem('theme');
     const theme_in_window = window.matchMedia('prefers-color-scheme: dark').matches;
-    
+
     if(theme_in_localStorage === 'dark' || (!theme_in_localStorage && theme_in_window)) {
       setIsDarkMode(true);
     } else {

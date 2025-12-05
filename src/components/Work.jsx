@@ -10,7 +10,7 @@ const Work = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       id="work"
-      className="relative -z-1 w-full px-[12%] py-10 scroll-mt-20"
+      className="w-full px-[12%] py-10 scroll-mt-20"
     >
       <motion.h4
         initial={{ opacity: 0, y: -20 }}
@@ -63,7 +63,7 @@ const Work = () => {
         ))}
       </motion.div>
 
-      <motion.a
+      {/* <motion.a
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.1 }}
@@ -72,7 +72,7 @@ const Work = () => {
       >
         Show more
         <FontIcon icon="arrow-right" className="dark:text-white text-md" />
-      </motion.a>
+      </motion.a> */}
     </motion.div>
   );
 };
