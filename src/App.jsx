@@ -11,6 +11,7 @@ import Header from './components/Header'
 // 组件懒加载
 const About = lazy(() => import('./components/About'));
 const Services = lazy(() => import('./components/Services'));
+const Projects = lazy(() => import('./components/Projects'));
 const Work = lazy(() => import('./components/Work'));
 const Contact = lazy(() => import('./components/Contact'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -65,7 +66,8 @@ function App() {
       <Navbar />
       <Header />
       <About />
-      <Services />
+      {/* <Services /> */}
+      <Projects />
       <Work />
       <Contact />
       <Footer />

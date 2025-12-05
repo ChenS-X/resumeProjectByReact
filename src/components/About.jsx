@@ -53,11 +53,14 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex-1"
         >
-          <p className="mb-10 max-w-2xl font-Ovo!">
-            I am a expreienced front-end developer with a strong background in
+          <p className="text-center mb-10 max-w-2xl">
+            {/* I am a expreienced front-end developer with a strong background in
             React.js and Next.js. I have a passion for creating beautiful and
             user-friendly websites and applications. I am always looking for new
-            challenges and opportunities to learn and grow as a developer.
+            challenges and opportunities to learn and grow as a developer. */}
+            我是一名具有
+            <strong className="text-red-500">5</strong>
+            年经验的前端开发人员。我具有Vue2/3多年开发经验，熟练掌握React、Typescript、Nodejs（express/Koa）、前端工程化&CI/CD。并不断学习，致力于成为更好的前端（全栈）开发人员。
           </p>
           <motion.ul
             initial={{ opacity: 0 }}
@@ -95,13 +98,13 @@ const About = () => {
             transition={{ duration: 1.5, delay: 0.6 }}
             className="flex items-center gap-3 sm:gap-5"
           >
-            {toolsData.map((tool, index) => (
+            {toolsData.map(({icon, title}, index) => (
               <motion.li
                 whileHover={{ scale: 1.1 }}
                 key={index}
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
               >
-                <LazyImage src={tool} alt="Tool" className="w-5 sm:w-7" />
+                <LazyImage src={icon} alt={title} className="w-5 sm:w-7" />
               </motion.li>
             ))}
           </motion.ul>

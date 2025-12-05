@@ -6,7 +6,7 @@ import FontIcon from "./FontIcon";
 const Header = () => {
   return (
     <div
-      id="top"
+      id="home"
       className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4 py-120"
     >
       <motion.div

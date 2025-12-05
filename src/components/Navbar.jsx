@@ -3,6 +3,7 @@ import ThemeContext from "@/contexts/themeContext";
 import { useContext, useEffect, useRef, useState } from "react";
 import LazyImage from "@/components/LazyImage";
 import FontIcon from "@/components/FontIcon";
+import { menuList } from "../assets/assets";
 
 const Navbar = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
@@ -43,7 +44,11 @@ const Navbar = () => {
             alt=""
             className="w-28 cursor-pointer mr-14"
           /> */}
-          <img src={isDarkMode ? assets.logo_dark : assets.logo} alt="" className="w-28 cursor-pointer mr-14" />
+          <img
+            src={isDarkMode ? assets.logo_dark : assets.logo}
+            alt=""
+            className="w-28 cursor-pointer mr-14"
+          />
         </a>
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 ${
@@ -52,7 +57,14 @@ const Navbar = () => {
               : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
           }`}
         >
-          <li>
+          {menuList.map(({ title, link }) => (
+            <li key={link}>
+              <a className="font-Ovo!" href={link}>
+                {title}
+              </a>
+            </li>
+          ))}
+          {/* <li>
             <a className="font-Ovo!" href="#top">
               Home
             </a>
@@ -76,7 +88,7 @@ const Navbar = () => {
             <a className="font-Ovo!" href="#contact">
               Contact me
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <div className="flex items-center gap-4">
@@ -115,7 +127,14 @@ const Navbar = () => {
               className="dark:text-white text-xl"
             ></FontIcon>
           </div>
-          <li>
+          {menuList.map(({ title, link }) => (
+            <li key={link}>
+              <a className="font-Ovo!" onClick={closeMenu} href={link}>
+                {title}
+              </a>
+            </li>
+          ))}
+          {/* <li>
             <a className="font-Ovo!" onClick={closeMenu} href="#top">
               Home
             </a>
@@ -139,7 +158,7 @@ const Navbar = () => {
             <a className="font-Ovo!" onClick={closeMenu} href="#contact">
               Contact me
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>
