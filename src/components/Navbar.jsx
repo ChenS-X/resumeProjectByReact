@@ -1,10 +1,14 @@
 import { assets } from "@/assets/assets";
 import ThemeContext from "@/contexts/themeContext";
 import { useContext, useEffect, useRef, useState } from "react";
-import LazyImage from "@/components/LazyImage";
 import FontIcon from "@/components/FontIcon";
 import { menuList } from "../assets/assets";
 
+// 判断是否在微信内置浏览器打开
+const isWechat = () => {
+  const ua = window.navigator.userAgent.toLowerCase();
+  return ua.match(/MicroMessenger/i) == "micromessenger";
+};
 const Navbar = () => {
   const { isDarkMode, setIsDarkMode } = useContext(ThemeContext);
   const sideMenuRef = useRef(null);
@@ -32,6 +36,13 @@ const Navbar = () => {
       </div> */}
       <div className="dark:hidden -z-10 w-full h-[91.69px] overflow-hidden fixed top-0 right-0 bg-gradient-custom opacity-50"></div>
       <nav
+        style={
+          isScroll && isWechat()
+            ? {
+                backgroundColor: "rgba(255,255, 255, 0.8)",
+              }
+            : {}
+        }
         className={`w-full fixed top-0 left-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
           isScroll
             ? "bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-dark-theme dark:shadow-white/20"
