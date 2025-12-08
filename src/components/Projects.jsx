@@ -29,7 +29,7 @@ const Services = () => {
     const is_dialog = target.className.includes("fixed");
 
     const animateClassStr =
-      "fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[74%] h-[60%] md:w-[60%] md:h-[60%] z-100 bg-white dark:bg-dark-hover";
+      "fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-[74%] h-[68%] md:w-[60%] md:h-[60%] z-100 bg-white dark:bg-dark-hover";
     const originClassStr =
       "hover:shadow-black hover:bg-light-hover hover:-translate-y-1 dark:hover:bg-dark-hover dark:hover:shadow-white";
     const rootDialogClassStr =
@@ -104,7 +104,7 @@ const Services = () => {
               <p className="text-sm text-gray-600 leading-5 dark:text-white/80">
                 {description}
               </p>
-              <div className="content hidden overflow-y-auto max-h-[62%] mt-5 leading-6.5">
+              <div className="content hidden overflow-y-auto max-h-[60%] mt-5 leading-6.5">
                 {content.map((con, index) => (
                   <li key={con} className="mb-2">
                     <span>{`${index + 1}. `}</span>

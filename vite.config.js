@@ -40,6 +40,9 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  server: {
+    host: "0.0.0.0",
+  },
   plugins: [
     react(),
     imageOptimizer({
