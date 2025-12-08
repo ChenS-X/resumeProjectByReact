@@ -74,8 +74,8 @@ const Contact = () => {
       >
         <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
           <motion.input
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1 }}
             name="name"
             type="text"
@@ -84,8 +84,8 @@ const Contact = () => {
             className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-dark-hover/30 dark:border-white/90"
           />
           <motion.input
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2 }}
             name="email"
             type="email"
